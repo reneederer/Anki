@@ -1,0 +1,354 @@
+"Definition 3.1 Vektorraum";"Definition 3.1. Sei V eine Menge und K ein Körper. Gegeben seien die Addition ⊕ : V ×V → V
+und die Skalarmultiplikation  : K×V → V . (V, ⊕, ) heisst Vektorraum, wenn für alle u, v ∈ V
+und alle α, β ∈ K die folgenden Eigenschaften gelten:
+• (V, ⊕) ist eine abel’sche Gruppe.
+• α  (u ⊕ v ) = α  (v ⊕ u) = (α  u) ⊕ (α  v )
+• (α + β)  v = (α  v ) ⊕ (β  v )
+• (αβ)  v = α  (β  v )
+• 1  v = v , wobei 1 das Einselement der Multiplikation in K ist."
+
+"Definition 3.3 Linearkombination";"Definition 3.3. Sei (V, +, ·) ein Vektorraum und seien v1, . . . , vn ∈ V .
+• Seien λ1, . . . , λn ∈ K, dann heisst
+v =
+Xn
+i=1
+λi vi
+Linearkombination der vi
+.
+• Die Elemente v1, . . . , vn heissen linear unabhängig, wenn aus Pn
+i=1 λi vi = 0 folgt, dass
+λ1 = λ2 . . . = λn = 0.
+• Eine Menge W ⊂ V heisst linear unabhängig für alle n ∈ N, n ≤ |W| jede Teilmenge
+{v1, . . . , vn} linear unabhängig ist. Andernfalls nennen wir W linear abhängig.
+• Sei W ⊂ V , dann ist die lineare Hülle
+lin(W) = {
+Xn
+i=1
+λi vi
+| n ∈ N, λi ∈ K, vi ∈ W}
+gegeben als die Menge aller Linearkombinationen von Elementen aus W.
+• W heisst Erzeugendensystem, wenn lin(W) = V .
+• B ⊂ V heisst Basis von V , wenn B Erzeugendensystem und linear unabhängig ist.
+• Ist B Basis von V und n = |B| < ∞, dann heisst V endlichdimensionaler Vektorraum (und
+n die Dimension von V ).
+• Ist W ⊂ V selbst ein Vektorraum – das heißt, dass W abgeschlossen ist bezüglich Addition
+und Skalarmultiplikation – dann nennen wir W Unterraum von V."
+
+"Satz 3.6 Teilraum";"Satz 3.6. Sei V ein Vektorraum und W ⊂ V . Dann ist lin(W) ein Teilraum von V ."
+
+"Satz 3.7 Basis":"Satz 3.7. Sei V ein nichtleerer (V 6= ∅) und nichttrivialer (V 6= {0}) Vektorraum über K und
+sei für ein n ∈ N eine Menge von Vektoren B = {v1, v2, . . . , vn} ⊂ V gegeben. Dann sind die
+folgenden Aussagen äquivalent:
+i) Die Menge B ist eine Basis (also ein linear unabhängiges Erzeugendensystem).
+ii) Die Menge B kann nicht reduziert werden und immer noch ein Erzeugendensystem bleiben
+(also für jedes r ∈ {1, . . . , n} ist
+B \ {vr }
+kein Erzeugendensystem mehr).
+iii) Die Menge B kann nicht erweitert werden und immer noch eine Basis bleiben (also für
+jedes v ∈ V ist
+B ∪ {v}
+keine Basis mehr).
+iv) Die Darstellung eines Vektors v ∈ V als Linearkombination aus B ist eindeutig (also
+v = λ1v1 + λ2v2 + · · · + λnvn
+mit eindeutig bestimmten Koeffizienten λ1, . . . , λn ∈ K)."
+
+"Satz 3.8 Kardinalität von Basen";"Satz 3.8. Je zwei Basen eines eines endlichdimensionalen Vektorräumes haben die selbe Kardinalität.
+Dies erlaubt uns nun in sinnvoller Weise die Dimension eines Vektorraums V zu definieren:
+dim(V ) = (
+∞ falls V keine endliche Basis besitzt,
+n falls V eine Basis der Länge n besitzt."
+
+
+"Lemma 3.11 Direkte Summe";"Lemma 3.11. Seien V und W Vektorräume mit Summe V + W. Die Summe ist direkt genau
+dann, wenn V ∩ W = {0}."
+
+"Satz 3.12 Dimension";"Satz 3.12. Sei V ein endlich dimensionaler Vektorraum und seien U und W ⊂ V zwei Unterräume. Dann gilt
+dim(U + W) = dim(U) + dim(W) - dim(U ∩ W)."
+
+"Definition 3.13 Lineare Abbildung";"Definition 3.13. Wir bezeichnen eine Abbildung L: V1 → V2 als linear, falls für alle v , w ∈ V1
+und α ∈ K gilt, dass
+L(αv + w) = αL(v ) + L(w)."
+
+"Lemma 3.17 Lineare Abbildung, injektiv";"Lemma 3.17. Eine lineare Abbildung L ist injektiv genau dann, wenn aus L(v ) = 0 folgt v = 0."
+
+"Definition 3.18 Isomorphismus";"Definition 3.18. Eine bijektive lineare Abbildung nennen wir Isomorphismus."
+
+"Satz 3.19";"Satz 3.19. Sei V ein Vektorraum über R und sei dim(V ) = n. Dann existiert ein Isomorphismus
+von V nach R^n als Vektorraum über R."
+
+"Satz 3.20";"Satz 3.20. Sei L: V1 → V2 eine lineare Abbildung zwischen endlichdimensionalen Vektorräumen.
+Dann gilt:
+• Ist L injektiv, so folgt dim(V2) ≥ dim(V1).
+• Ist L surjektiv, so folgt dim(V2) ≤ dim(V1)."
+
+"Korollar 3.21 Lineare Abbildung, nicht surjektiv/nicht injektiv";"Korollar 3.21. Sei L: R^n → R^m. Ist m < n, dann ist L nicht injektiv. Ist m > n, dann ist L
+nicht surjektiv."
+
+"Eigenschaften des Skalarprodukts";"Das hier definierte Skalarprodukt (und alle Skalarprodukte, die Sie später noch kennen lernen)
+hat folgende wichtige und nützliche Eigenschaften (hier dargestellt für a, b, c ∈ R
+n und α ∈ R:
+37
+• Bilinearität:
+(αa + b)
+T
+c = αaT
+c + b
+T
+d and a
+T
+(αb + c) = αaT
+b + a
+T
+c,
+das heißt Linearität in beiden Argumenten.
+• Eine Norm wird induziert:
+kxk
+2
+:= x
+T
+x oder kxk =
+p
+x
+T x.
+• Die Cauchy-Schwarzsche Ungleichung gilt:
+|a
+T
+b| ≤ kakkbk.
+• Das Skalarprodukt erlaubt die Definition von Orthogonalität: wir sagen x und y sind orthogonal, wenn x
+T
+y = 0.
+"
+
+"Definition 3.22";"Definition 3.22. Eine Basis {b1, . . . , bn} des R
+n heisst Orthogonalbasis, falls b
+T
+i
+bj = 0 für i 6= j
+und i, j = 1, . . . , n gilt. Gilt zusätzlich kbik = 1 für i = 1, . . . , n, dann sprechen wir von einer
+Orthonormalbasis."
+
+"Lemma 3.23 Gram-Schmidt-Verfahren";"Lemma 3.23. Gegeben sei ein Vektorraum V mit einem Skalarprodukt
+h , i : V × V → R.
+Dann existiert zu jeder Menge B = {v1, v2, . . . , vm} linear unabhängiger Vektoren eine Menge
+B˜ = {v˜1, v˜2, . . . , v˜m}, sodass
+• lin{v˜1, v˜2, . . . , v˜k } = lin{v1, v2, . . . , vk }, für alle k = 1, . . . , m, und
+• die Vektoren in B˜ sind paarweise orthonormal, das heißt,
+hv˜i
+, v˜ji =
+(
+1, i = j
+0, i 6= j
+für i, j = 1, 2, . . . , m.
+Insbesondere, können wir aus jeder Basis eine zugehörige Orthonormalbasis konstruieren.
+Beweis. Das sogenannte „Gram-Schmidt“ Verfahren
+v˜i = vi −
+X
+i−1
+k=1
+hv˜k , vii
+hv˜k , v˜k i
+v˜k
+für i = 1, . . . , m, beschreibt die rekursive Konstruktion einer orthogonalen Basis. Orthonormalität kann durch Normierung der Vektoren auf die Länge 1 immer erreicht werden."
+
+"Rang einer Matrix";"rang(A) := n − dim(Ker(A)"
+
+"Lemma 3.25";"Lemma 3.25. Sei dim(V ) = n und sei {b1, . . . , bk }, k < n, eine linear unabhängige Menge.
+Dann existieren Vektoren bk+1, . . . , bn, sodass {b1, . . . , bn} eine Basis von V ist."
+
+"Lemma 3.26";"Lemma 3.26. Sei A ∈ R
+m×n
+. Dann gilt rang(A) = dim(Im(A))"
+
+"Satz 3.27";"Satz 3.27. Es gilt
+R
+m = Im(A) ⊕ Ker(A
+T
+), R
+n = Im(A
+T
+) ⊕ Ker(A),
+dazu sind die beiden Teilräume jeweils orthogonal."
+
+"Lemma 3.28";"Lemma 3.28. Sei x0 ∈ R
+n
+eine Lösung von Ax = y . Dann ist die Menge aller Lösungen gegeben
+durch
+x0 + Ker(A) = {x ∈ R
+n
+| x = x0 + z, z ∈ Ker(A)}"
+
+"Satz 3.29";"Satz 3.29. Ein Gleichungssystem Ax = y ist lösbar, genau dann wenn z
+T
+y = 0 für alle z ∈
+Ker(A
+T
+) gilt."
+
+"Definition 3.31";"Definition 3.31. Eine Matrix A ∈ R
+n×n heisst regulär, wenn für alle y ∈ R
+n
+eine eindeutige
+Lösung des linearen Systems Ax = y existiert. Andernfalls heisst A singulär.""
+
+"Definition 3.36 Permutation";"Definition 3.36. Eine Permutation ist eine bijektive Abbildung
+π : {1, . . . , n} → {1, . . . , n}.
+Die Menge der Permutationen zur Mächtigkeit n nennen wir Sn.
+Hierbei steht die Menge {1, 2, . . . , n} stellvertretend für eine endliche Menge. Eine Permutation ist sozusagen einen (Um)ordnung von Objekten in einer bestimmten Reihenfolge.
+Eine bequeme Schreibweise für Permutationen ist die Wertetabelle:
+π =
+
+i
+π(i)
+
+i=1,...,n
+wobei in der ersten Zeile das Argument und in der zweiten Zeile das Bild dazu steht.
+Wir unterscheiden monotone Teile der Permutation (i ≤ j und π(i) ≤ π(j)), sowie nichtmonotone (i < j und π(i) > π(j)), letztere nennt man Fehlstände oder Inversionen
+inv(π) := {(i, j) | i < j, π(i) > π(j)}.
+Basierend darauf definieren wir das Vorzeichen einer Permutation als
+sign(π) = (−1)| inv(π)|
+."
+
+"Satz 3.44 Multiplikation von Determinanten";"Satz 3.44. Seien A, B ∈ R
+n×n
+. Dann gilt
+det(AB) = det(A) det(B)."
+
+"Satz 3.45 Regularität";"Satz 3.45. A ∈ R
+n×n
+ist regulär genau dann wenn det(A) 6= 0."
+
+"Definition 4.1";"Definition 4.1. Eine Menge X mit einer Abbildung d : X × X → R, welche die folgenden
+Eigenschaften erfüllt, heisst metrischer Raum:
+1. d(x, y ) ≥ 0 für alle x, y ∈ X und d(x, y ) = 0 genau dann wenn x = y (Positivität).
+2. d(x, y ) = d(y, x) für alle x, y ∈ X (Symmetrie).
+3. d(x, z) ≤ d(x, y ) + d(y, z) für alle x, y, z ∈ X (Dreiecksungleichung).
+Die Abbildung d heisst dann Metrik auf X."
+
+"Definition 4.2 Norm";"Definition 4.2. Eine Abbildung k · k : X → R auf einem Vektorraum X (über R) heisst Norm,
+wenn die folgenden Eigenschaften erfüllt sind:
+1. kxk ≥ 0 für alle x ∈ X und kxk = 0 genau dann wenn x = 0 (Positivität).
+2. kαxk = |α| kxk für alle α ∈ R und x ∈ X (Absolute Homogenität).
+3. kx + yk ≤ kxk + kyk für alle x, y ∈ X (Dreiecksungleichung).
+(X, k · k) nennen wir dann einen normierten Raum oder normierten Vektorraum."
+
+"Satz 4.3 Norm und Metrik";"Satz 4.3. Ist (X, k · k) ein normierter Raum, dann ist d definiert durch
+d(x, y ) = kx − yk, ∀x, y ∈ X,
+eine Metrik auf X. Die Umkehrung, also dass wir aus einer Metrik mittels kxk := d(x, 0) eine
+Norm ableiten können, gilt im Allgemeinen nicht, wie man sich an obigen weiter hergeholten
+Beispielen zu Metriken klar machen kann."
+
+"Definition 4.5";"Definition 4.5. Zwei Metriken dA und dB auf X heissen äquivalent, falls Konstanten β ≥ α > 0
+existieren, sodass
+∀x, y ∈ X : αdB(x, y ) ≤ dA(x, y ) ≤ βdB(x, y ).
+Zwei Normen k · kA und k · kB auf einem Vektorraum X heissen äquivalent, falls Konstanten
+β ≥ α > 0 existieren, sodass
+∀x ∈ X : αkxkB ≤ kxkA ≤ βkxkB."
+
+"Definition 4.6";"Definition 4.6. Sei X ein metrischer Raum und ε ∈ R mit ε > 0. Dann heisst
+Uε(x) = {y ∈ X | d(x, y ) < ε}
+ε-Umgebung von x."
+
+"Definition 4.7";"Definition 4.7. Sei (X, d) ein metrischer Raum und M ⊂ X. M heisst offen, wenn für alle x ∈ M
+eine ε-Umgebung Uε(x) ⊂ M existiert (wobei ε von x abhängen kann). M heisst abgeschlossen,
+wenn X \ M offen ist.
+Wir beachten, dass die leere Menge immer offen ist, damit ist X = X \ ∅ abgeschlossen.
+Andererseits ist X natürlich auch offen, da ja alle ε-Umgebungen per Definition Teilmengen von
+X sind. Damit ist auch wieder ∅ = X \ X abgeschlossen. Die leere Menge und X sind aber die
+einzigen Mengen, die in X abgeschlossen und offen sind."
+
+"Definition 4.10";"Definition 4.10. Sei (X, d) ein metrischer Raum. Eine Teilmenge M ⊂ X heißt beschränkt, falls
+eine Umgebung Uω(z) existiert, mit z ∈ M und ω ∈ R, sodass
+M ⊂ Uω(z),
+also d(x, z) < ω, für alle x ∈ M."
+
+"Definition 4.11 Folge";"Definition 4.11. Sei (X, d) ein metrischer Raum. Eine Menge {xn | n ∈ N} ⊂ X heißt Folge.
+Wir schreiben auch einfach (xn) für eine Folge.
+Eine Folge ist erstmal einfach eine unendliche Liste von Werten oder eine unendliche Menge
+und entzieht sich somit einer Analyse durch, z.B., einfaches Sortieren der Elemente. Dennoch
+können wir uns fragen ob die Folge als Menge beschränkt ist. Falls die Folge Teilmenge der reellen
+Zahlen ist kann desweiteren unterschieden werden ob sie nach oben oder unten beschränkt ist,
+also ob (xn) ein Supremum oder ein Infimum besitzt. Eine besonders wichtige Eigenschaft von
+Folgen folgt in der nächsten Definition"
+
+"Definition 4.12 Konvergenz/Grenzwert";"Definition 4.12. Sei X ein metrischer Raum und (xn) eine Folge in X. (xn) heisst konvergent
+mit Grenzwert x, wenn
+∀ε > 0 ∃n0 ∈ N ∀n ≥ n0 : d(xn, x) < ε.
+Wir schreiben
+limn→∞
+xn = x, xn → x mit n → ∞, oder auch xn −−−→ n→∞ x"
+
+"Definition 4.13";"Definition 4.13. Eine Folge (xn) in einem metrischen Raum (X, d) heisst Cauchy-Folge, wenn
+∀ε > 0 ∃n0 ∈ N ∀m, n ≥ n0 : d(xn, xm) < ε"
+
+"Satz 4.14 Cauchy-Folge";"Satz 4.14. Jede konvergente Folge (xn) in einem metrischen Raum (X, d) ist eine Cauchy-Folge."
+
+"Definition 4.15 vollständiger metrischer Raum";"Definition 4.15. Ein metrischer Raum (X, d) heisst vollständig, wenn jede Cauchy-Folge in X
+konvergiert."
+
+"Satz 4.16";"Satz 4.16. Die reellen Zahlen R mit der Betragsmetrik d(x, y ) = |x − y | sind ein vollständiger
+metrischer Raum."
+
+"Definition 4.17 Beschränkte Folgen";"Definition 4.17. Sei (X, d) ein metrischer Raum. Eine Folge (xn) ⊂ X heißt beschränkt wenn
+sie als Teilmenge gemäß Definition 4.10 beschränkt ist, also ein ω ∈ R und ein z ∈ X existiert,
+sodass
+d(xn, z) ≤ ω, ∀n ∈ N.
+Ist auf X eine Ordnungsrelation definiert, so nennen wir (xn) nach unten/nach oben beschränkt,
+falls eine (xn) eine untere/obere Schranke besitzt."
+
+"Definition 4.18 Monotonie";"Definition 4.18. Eine reelle Folge (xn) ⊂ R heißt monoton wachsend, falls
+n > m ⇒ xn ≥ xm.
+Sie heißt monoton fallend, falls
+n > m ⇒ xn ≤ xm"
+
+"Lemma 4.19 Monotonie und Konvergenz";"Lemma 4.19. Sei (xn) ⊂ R monoton wachsend(fallend) und nach oben(nach unten) beschränkt.
+Dann konvergiert (xn)."
+
+"Lemma 4.20";"Lemma 4.20. Die Folge (xn) im metrischen Raum (X, d) konvergiert genau dann gegen x, wenn
+d(xn, x) −−−→ n→∞
+0,
+also wenn d(xn, x) eine Nullfolge in R ist."
+
+"Satz 4.21";"Satz 4.21. Für N ∈ N ist R
+N mit der durch die Euklidischen Norm definierten Metrik vollständig."
+
+"Korollar 4.22";"Korollar 4.22. Sei (xn) eine Folge im Raum R
+N, dann ist äquivalent:
+• xn −−−→ n→∞
+x bezüglich der euklidischen Norm, also
+kxn − xk2 → 0
+mit n → ∞.
+• Alle Koordinatenfolgen (x
+(i)
+n ) ⊂ R konvergieren, also
+|x
+(i)
+n − x
+(i)
+| → 0,
+mit n → ∞.
+• xn −−−→ n→∞
+x bezüglich einer beliebigen Norm, also
+kxn − xk → 0
+mit n → ∞.
+Mit den Eigenschaften für Grenzwerte in R zeigen wir auch für konvergente Folgen (xn) und
+(yn) im R
+N:
+limn→∞
+(xn + yn) = limn→∞
+xn + limn→∞
+yn
+limn→∞
+(xn · yn) = limn→∞
+xn · limn→∞
+yn.
+Im Falle von N = 1 gilt, sofern limn→∞ yn 6= 0, dass auch
+limn→∞
+(
+xn
+yn
+) = limn→∞ xn
+limn→∞ yn
+.
+Für die letzte Aussage, sei noch bemerkt, dass es bei Grenzwertbetrachtungen immer nur auf
+das ankommt was „nach“ einem n0 passiert und dass, sagen wir, limn→∞ yn = y > 0 impliziert,
+dass es ein n0 gibt, sodass für alle folgenden yn gilt, dass yn > 0 ist."
